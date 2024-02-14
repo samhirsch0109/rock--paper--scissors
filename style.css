@@ -1,0 +1,12 @@
+body {
+    background-color: rgb(219, 233, 233);
+}
+
+h1.text-center {
+    color: pink;
+}
+
+.name {
+    margin: auto;
+    font-size: x-large;
+}
