@@ -27,12 +27,31 @@
             <h1 class="text-center"> Rock, Paper, Scissors </h1>
             <h5 class="text-center"> Click on the rock, paper, or scissors choice to see if you can beat the computer. Good luck! </h5>
        <div class="text-center"> <div class="name" id="nameChange"> My name is: </div>
-</div>            </div>
-            <div class="col-lg 12 md-6 sm-4"> 
-        <div class="playerscore" id="playerScore"> Player Score: </div>
-        <div class="computerscore" id="computerScore"> Computer Score: </div>
-    
+
+
+       <div class="row p-3"> 
+        <div class="choices"> 
+            <button onclick="playGame('rock')">🪨</button>
+            <button onclick="playGame('paper')">🗒️</button>
+            <button onclick="playGame('scissors')">✂️</button> 
+        </div>
+            <div id="playerDisplay">PLAYER: </div>
+            <div id="computerDisplay">COMPUTER: </div>
+            <div id="resultDisplay"></div>
+        
+            <div class="scoreDisplay">Player Score: 
+                <span id="playerScoreDisplay">0</span>
+            </div>
+        
+            <div class="scoreDisplay">Computer Score: 
+                <span id="computerScoreDisplay">0</span>
+            </div>
+        
+        
 </div>
+    </div>
+    </div>
+    <button id="restart" class="restart-btn">Restart Game</button>
     </div>
     </main>
         <footer>
@@ -50,5 +69,6 @@
             integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
             crossorigin="anonymous"
         ></script>
+        <script src="script.js"> </script>
     </body>
 </html>
