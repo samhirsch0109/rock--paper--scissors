@@ -6,10 +6,13 @@
     <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS v5.2.1 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -23,8 +26,8 @@
             <h5 class="text-center"> Click on the rock, paper, or scissors choice to see if you can beat the computer.
                 Good luck! </h5>
             <div class="text-center">
-                <div class="name" id="nameChange"> My name is: </div>
-
+                <div class="name" id="nameChange"> I'm </div>
+    
 
                 <div class="row p-3">
                     <div class="choices">
@@ -38,29 +41,40 @@
                 <div class="row">
                     <div class="col-12 col-lg-6 my-3 my-lg-0 p-3">
                         <div class="text-center">
-                            <div class="score" id="playerScore">
+                            <div class="player" id="playerChoice">
                                 <h2 class="text-center">Player Choice:</h2>
                             </div>
                         </div>
                     </div>
                     <div class="col-12 col-lg-6 my-3 my-lg-0 p-3">
                         <div class="text-center">
+                            <div class="player" id="computerChoice">
                             <h2 class="text-center">Computer Choice:</h2>
                         </div>
                     </div>
                 </div>
             </div>
- 
-            <div class="col-12 col-md-6 col-lg-4 my-3 my-md-0 p-3">
-                <div class="scoreboard"> 
-                    <div class="container2"> 
-                        <h3 class="text-center"> SCOREBOARD: </h3>
-                    </div>
-                    <div class="line"> 
-                        <h3>Computer</h3>  
-                    </div>
+            <div class="row p-3"> 
+
+            <div id="score" class="score">
+            <div class="scoreDisplay">Player Score: 
+                <span id="playerScoreDisplay"></span>
+            </div>
+        
+            <div class="scoreDisplay">Computer Score: 
+                <span id="computerScoreDisplay"></span>
+            </div>
+            </div>
+            </div>
+            <div class="row p-3">
+                <div class="roundNumber" id="roundNumber"></div>
+                <div class="row p-3">
+                    <div id="resultMessage" class="text-center"></div>
                 </div>
             </div>
+ <div class="text-center"> 
+            <button onclick="restart('restart')"> Restart</button> </div> </div>
+
         <footer>
             <!-- place footer here -->
         </footer>
