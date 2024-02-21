@@ -7,7 +7,8 @@ body {
 }
 
 h1.text-center {
-    color: rgb(112, 142, 233);
+    color: rgb(132, 163, 255);
+    font-family: "Fredoka", sans-serif;
 }
 
 .name {
@@ -24,8 +25,8 @@ h1.text-center {
     font-size: 7.5rem;
     min-width: 160px;
     margin: 0 10px;
-    border-radius: 65px;
-    background-color: rgb(106, 101, 206);
+    border-radius: 70px;
+    background-color: rgb(126, 122, 207);
     cursor: pointer;
     transition: background-color 0.5s ease;
     border: 3px solid black;
@@ -74,5 +75,5 @@ h2.text-center {
 }
 
 button:hover {
-    background-color: #7267c6;
+    background-color: #7970bd;
 }
