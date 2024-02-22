@@ -22,4 +22,4 @@ function playRound(playerChoice){
 
 const playerChoice = document.getElementById("playerChoice");
 const computerChoice = document.getElementById("computerChoice");
-}
+} 
