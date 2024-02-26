@@ -77,3 +77,8 @@ h2.text-center {
 button:hover {
     background-color: #7970bd;
 }
+
+h3.text-center {
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(112, 142, 233);
+}
