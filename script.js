@@ -4,8 +4,11 @@ let name = prompt('Enter your name:')
 let story = ` Player Name: <b> ${name} </b>`
 
 nameChange.innerHTML = `<p>${story}</p>`
+let playerScore = 0;
+let computerScore = 0;
+let roundNumber = 0;
 
-
+//get computer choice
 function playGame(playerChoice) {
     // Get Computer Choice
     const randomNumber = Math.floor(Math.random() * 3);
@@ -18,11 +21,47 @@ function playGame(playerChoice) {
         computerChoice = 'Scissor';
     }
 
-
+    //makes the choice uppercase
     playerChoice = playerChoice.toUpperCase();
     computerChoice = computerChoice.toUpperCase();
 
-    // Display Selections
+    // show choices
     document.getElementById("playerChoice").innerHTML = `<h5 class="text-center">Player Choice: ${playerChoice}</h5>`;
     document.getElementById("computerChoice").innerHTML = `<h5 class="text-center">Computer Choice: ${computerChoice}</h5>`;
+}
+
+
+ //Evaluate the winner
+//USer Chooses Rock
+
+if (playerChoice === 'Rock' && computerChoice === 'Rock') {
+    console.log('Tie');
+    ties++;
+} else if (playerChoice === 'Rock' && computerChoice === 'Paper') {
+    console.log('Computer Wins');
+    computerScoreDisplay++;
+} else if (playerChoice === 'Rock' && computerChoice === 'Scissors') {
+    console.log('You win');
+    playerScoreDisplay++;
+} 
+//user chooses Paper
+else if (playerChoice === 'Paper' && computerChoice === 'Paper') {
+    console.log('Tie');
+    ties++;
+} else if (playerChoice === 'Paper' && computerChoice === 'Scissors') {
+    console.log('Computer Wins');
+    compScore++;
+} else if (playerChoice === 'Paper' && computerChoice === 'Rock') {
+    console.log('You win');
+    userScore++;
+}
+
+//update visuals on site
+document.getElementById('playerScoreDisplay').textContent = `${userName} wins = ${playerScoreDisplay}`;
+document.getElementById('computerScoreDisplay').textContent = `Computer wins = ${computerScoreDisplay}`;
+document.getElementById('ties').textContent = `Ties = ${ties}`;
+
+function restartGame() {
+    let playerScore = 0
+    let computerScore = 0
 }
