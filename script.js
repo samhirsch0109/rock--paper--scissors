@@ -28,40 +28,28 @@ function playGame(playerChoice) {
     // show choices
     document.getElementById("playerChoice").innerHTML = `<h5 class="text-center">Player Choice: ${playerChoice}</h5>`;
     document.getElementById("computerChoice").innerHTML = `<h5 class="text-center">Computer Choice: ${computerChoice}</h5>`;
+
+ // Display round number
+ document.getElementById('roundNumber').innerText = `Round ${++roundNumber}`;
 }
 
+// Function to update scores and display result message
+function updateScores() {
+ if (playerChoice === computerChoice) {
+     document.getElementById('resultMessage').innerText = "It's a tie!";
+ } else if (
+     (playerChoice === 'rock' && computerChoice === 'scissors') 
+     (playerChoice === 'paper' && computerChoice === 'rock') 
+     (playerChoice === 'scissors' && computerChoice === 'paper')
+ ) {
+     document.getElementById('resultMessage').innerText = 'You win!';
+     playerScore++;
+ } else {
+     document.getElementById('resultMessage').innerText = 'Computer wins!';
+     computerScore++;
+ }
 
- //Evaluate the winner
-//USer Chooses Rock
-
-if (playerChoice === 'Rock' && computerChoice === 'Rock') {
-    console.log('Tie');
-    ties++;
-} else if (playerChoice === 'Rock' && computerChoice === 'Paper') {
-    console.log('Computer Wins');
-    computerScoreDisplay++;
-} else if (playerChoice === 'Rock' && computerChoice === 'Scissors') {
-    console.log('You win');
-    playerScoreDisplay++;
-} 
-//user chooses Paper
-else if (playerChoice === 'Paper' && computerChoice === 'Paper') {
-    console.log('Tie');
-    ties++;
-} else if (playerChoice === 'Paper' && computerChoice === 'Scissors') {
-    console.log('Computer Wins');
-    compScore++;
-} else if (playerChoice === 'Paper' && computerChoice === 'Rock') {
-    console.log('You win');
-    userScore++;
-}
-
-//update visuals on site
-document.getElementById('playerScoreDisplay').textContent = `${userName} wins = ${playerScoreDisplay}`;
-document.getElementById('computerScoreDisplay').textContent = `Computer wins = ${computerScoreDisplay}`;
-document.getElementById('ties').textContent = `Ties = ${ties}`;
-
-function restartGame() {
-    let playerScore = 0
-    let computerScore = 0
+ // Display scores
+ document.getElementById('playerScoreDisplay').innerText = playerScore;
+ document.getElementById('computerScoreDisplay').innerText = computerScore;
 }
