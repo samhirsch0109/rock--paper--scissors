@@ -29,27 +29,19 @@ function playGame(playerChoice) {
     document.getElementById("playerChoice").innerHTML = `<h5 class="text-center">Player Choice: ${playerChoice}</h5>`;
     document.getElementById("computerChoice").innerHTML = `<h5 class="text-center">Computer Choice: ${computerChoice}</h5>`;
 
- // Display round number
- document.getElementById('roundNumber').innerText = `Round ${++roundNumber}`;
 }
 
-// Function to update scores and display result message
-function updateScores() {
- if (playerChoice === computerChoice) {
-     document.getElementById('resultMessage').innerText = "It's a tie!";
- } else if (
-     (playerChoice === 'rock' && computerChoice === 'scissors') 
-     (playerChoice === 'paper' && computerChoice === 'rock') 
-     (playerChoice === 'scissors' && computerChoice === 'paper')
- ) {
-     document.getElementById('resultMessage').innerText = 'You win!';
-     playerScore++;
- } else {
-     document.getElementById('resultMessage').innerText = 'Computer wins!';
-     computerScore++;
- }
 
- // Display scores
+ //Evaluate the winner
+//USer Chooses Rock
+if (playerChoice === 'Rock' && computerChoice === 'Rock'){
+    function tie() {
+        document.getElementById() = 'ties'
+        ties++ 
+
+ // show scores
  document.getElementById('playerScoreDisplay').innerText = playerScore;
  document.getElementById('computerScoreDisplay').innerText = computerScore;
+}
+}
 }
