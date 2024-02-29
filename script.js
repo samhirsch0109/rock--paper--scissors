@@ -28,20 +28,25 @@ function playGame(playerChoice) {
     // show choices
     document.getElementById("playerChoice").innerHTML = `<h5 class="text-center">Player Choice: ${playerChoice}</h5>`;
     document.getElementById("computerChoice").innerHTML = `<h5 class="text-center">Computer Choice: ${computerChoice}</h5>`;
+    //Evaluate the winner
+    //USer Chooses Rock
+    if (playerChoice === computerChoice ) {
+            document.getElementById('winner').textContent = 'ties'
+            roundNumber++
+        } else if (playerChoice === 'rock' && computerChoice === 'paper'){
+            computerScoreDisplay++
+        }  else if (playerChoice === 'rock' && computerChoice === 'scissors'){
+            playerScoreDisplay++
+        } else if (playerChoice === 'paper' && computerChoice === 'rock'){
+                computerScoreDisplay++
+        } else if (playerChoice)
 
-}
 
 
- //Evaluate the winner
-//USer Chooses Rock
-if (playerChoice === 'Rock' && computerChoice === 'Rock'){
-    function tie() {
-        document.getElementById() = 'ties'
-        ties++ 
+         // show scores
+     document.getElementById('playerScoreDisplay').innerText = playerScore;
+     document.getElementById('computerScoreDisplay').innerText = computerScore;
+    }
+    
 
- // show scores
- document.getElementById('playerScoreDisplay').innerText = playerScore;
- document.getElementById('computerScoreDisplay').innerText = computerScore;
-}
-}
-}
+
