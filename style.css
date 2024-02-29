@@ -82,3 +82,9 @@ h3.text-center {
     font-family: 'Courier New', Courier, monospace;
     color: rgb(112, 142, 233);
 }
+
+#winner {
+    font-family: "Playfair Display", serif;
+    font-size: x-large;
+    color: rgb(112, 142, 233);
+}

@@ -18,7 +18,7 @@ function playGame(playerChoice) {
     } else if (randomNumber === 1) {
         computerChoice = 'Paper';
     } else {
-        computerChoice = 'Scissor';
+        computerChoice = 'Scissors';
     }
 
     //makes the choice uppercase
@@ -28,25 +28,31 @@ function playGame(playerChoice) {
     // show choices
     document.getElementById("playerChoice").innerHTML = `<h5 class="text-center">Player Choice: ${playerChoice}</h5>`;
     document.getElementById("computerChoice").innerHTML = `<h5 class="text-center">Computer Choice: ${computerChoice}</h5>`;
-    //Evaluate the winner
-    //USer Chooses Rock
-    if (playerChoice === computerChoice ) {
-            document.getElementById('winner').textContent = 'ties'
-            roundNumber++
-        } else if (playerChoice === 'rock' && computerChoice === 'paper'){
-            computerScoreDisplay++
-        }  else if (playerChoice === 'rock' && computerChoice === 'scissors'){
-            playerScoreDisplay++
-        } else if (playerChoice === 'paper' && computerChoice === 'rock'){
-                computerScoreDisplay++
-        } else if (playerChoice)
+    //finds the winner
 
-
-
-         // show scores
-     document.getElementById('playerScoreDisplay').innerText = playerScore;
-     document.getElementById('computerScoreDisplay').innerText = computerScore;
+    if (playerChoice === computerChoice) {
+        document.getElementById('winner').textContent = 'It\'s a tie!';
+    } else if (playerChoice === 'Rock' && computerChoice === 'Paper') {
+        document.getElementById('winner').textContent = 'Computer Wins!';
+        computerScore++; 
+    } else if (playerChoice === 'Paper' && computerChoice === 'Scissors') {
+        document.getElementById('winner').textContent = 'Computer Wins!';
+        computerScore++
+    } else if (playerChoice === 'Rock' && computerChoice === 'Scissors') {
+        document.getElementById('winner').textContent = 'Player Wins!';
+        playerScore++;
+    } else if (playerChoice === 'Paper' && computerChoice === 'Rock') {
+        document.getElementById('winner').textContent = 'Player Wins!';
+        playerScore++;
+    } else if (playerChoice === 'Scissors' && computerChoice === 'Paper') {
+        document.getElementById('winner').textContent = 'Player Wins!';
+        playerScore++;
+    } else if (playerChoice === 'Scissors' && computerChoice === 'Rock') {
+        document.getElementById('winner').textContent = 'Computer Wins!';
+        computerScore++;
     }
     
-
-
+    // Update scores
+    document.getElementById('playerScore').textContent = playerScore;
+    document.getElementById('computerScore').textContent = computerScore;
+}
