@@ -88,3 +88,7 @@ h3.text-center {
     font-size: x-large;
     color: rgb(112, 142, 233);
 }
+
+#resultMessage {
+    font-weight: 600;
+}
