@@ -62,11 +62,11 @@ function playGame(playerChoice) {
 
         //ends the game
         if (roundNumber === 5) {
-            // Display game over message
-            document.getElementById('resultMessage').textContent = 'Game Over! Click Restart to play again!!';
-            // Congratulatory message
+            // Display game over message 
+            document.getElementById('resultMessage').innerHTML = 'Game Over! Click Restart to play again!!';
+            // shows message
             if (playerScore > computerScore) {
-                document.getElementById('resultMessage').innerHTML = 'Congratulations! You win!';
+                document.getElementById('resultMessage').innerHTML = 'Congratulations you win! Click to play again';
             } else if (playerScore < computerScore) {
                 document.getElementById('resultMessage').innerHTML = 'Computer wins. Click to play again';
             } else {
