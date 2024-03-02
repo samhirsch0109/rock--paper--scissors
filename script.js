@@ -7,6 +7,7 @@ nameChange.innerHTML = `<p>${story}</p>`
 let playerScore = 0;
 let computerScore = 0;
 let roundNumber = 0;
+let roundResults = []
 
 // Function to play a round
 function playGame(playerChoice) {
@@ -35,7 +36,8 @@ function playGame(playerChoice) {
         // Find the winner
         if (playerChoice === computerChoice) {
             document.getElementById('winner').textContent = 'It\'s a tie!';
-        } else if (playerChoice === 'ROCK' && computerChoice === 'PAPER') {
+        } else if
+            (playerChoice === 'ROCK' && computerChoice === 'PAPER') {
             document.getElementById('winner').textContent = 'Computer Wins!';
             computerScore++;
         } else if (playerChoice === 'ROCK' && computerChoice === 'SCISSORS') {
@@ -62,11 +64,11 @@ function playGame(playerChoice) {
 
         //ends the game
         if (roundNumber === 5) {
-            // Display game over message 
-            document.getElementById('resultMessage').innerHTML = 'Game Over! Click Restart to play again!!';
-            // shows message
+            // Display game over message
+            document.getElementById('resultMessage').textContent = 'Game Over! Click Restart to play again!!';
+            // Congratulatory message
             if (playerScore > computerScore) {
-                document.getElementById('resultMessage').innerHTML = 'Congratulations you win! Click to play again';
+                document.getElementById('resultMessage').innerHTML = 'Congratulations! You win!';
             } else if (playerScore < computerScore) {
                 document.getElementById('resultMessage').innerHTML = 'Computer wins. Click to play again';
             } else {
@@ -74,9 +76,19 @@ function playGame(playerChoice) {
             }
         }
     }
+
 }
 
 // Function to restart the game
 function restart() {
     window.location.reload();
+     playerScore = 0;
+    computerScore = 0;
+    roundNumber = 0;
+
+    // Reset HTML elements
+    document.getElementById('playerScore').textContent = playerScore;
+    document.getElementById('computerScore').textContent = computerScore;
+    document.getElementById('resultMessage').textContent = '';
+    document.getElementById('roundResults').innerHTML = '';
 }
