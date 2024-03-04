@@ -7,7 +7,28 @@ nameChange.innerHTML = `<p>${story}</p>`
 let playerScore = 0;
 let computerScore = 0;
 let roundNumber = 0;
-let roundResults = []
+let roundResults = [];
+
+// Result messages for different outcomes
+const winMessages = [
+    'Congratulations! You win!',
+    'You are the winner!',
+];
+
+const loseMessages = [
+    'Computer wins the game.',
+    'Better luck next time!',
+];
+
+const tieMessages = [
+    'It\'s a tie. Good game!',
+    'No winner this round.',
+];
+
+// randomly selects a message from an array
+function getRandomMessage(messages) {
+    return messages[Math.floor(Math.random() * messages.length)];
+}
 
 // Function to play a round
 function playGame(playerChoice) {
@@ -34,26 +55,26 @@ function playGame(playerChoice) {
         document.getElementById("computerChoice").innerHTML = `<h5 class="text-center">Computer Choice: ${computerChoice}</h5>`;
 
         // Find the winner
+        let roundResult;
         if (playerChoice === computerChoice) {
             document.getElementById('winner').textContent = 'It\'s a tie!';
-        } else if
-            (playerChoice === 'ROCK' && computerChoice === 'PAPER') {
-            document.getElementById('winner').textContent = 'Computer Wins!';
+        } else if (playerChoice === 'ROCK' && computerChoice === 'PAPER') {
+            document.getElementById('winner').textContent = 'Computer wins!';
             computerScore++;
         } else if (playerChoice === 'ROCK' && computerChoice === 'SCISSORS') {
-            document.getElementById('winner').textContent = 'Player Wins!';
+            document.getElementById('winner').textContent = 'You win!';
             playerScore++;
         } else if (playerChoice === 'PAPER' && computerChoice === 'SCISSORS') {
-            document.getElementById('winner').textContent = 'Computer Wins!';
+            document.getElementById('winner').textContent = 'Computer wins!';
             computerScore++;
         } else if (playerChoice === 'PAPER' && computerChoice === 'ROCK') {
-            document.getElementById('winner').textContent = 'Player Wins!';
+            document.getElementById('winner').textContent = 'You win!';
             playerScore++;
         } else if (playerChoice === 'SCISSORS' && computerChoice === 'PAPER') {
-            document.getElementById('winner').textContent = 'Player Wins!';
+            document.getElementById('winner').textContent = 'You Win!';
             playerScore++;
         } else if (playerChoice === 'SCISSORS' && computerChoice === 'ROCK') {
-            document.getElementById('winner').textContent = 'Computer Wins!';
+            document.getElementById('winner').textContent = 'Computer wins!';
             computerScore++;
         }
 
@@ -61,34 +82,26 @@ function playGame(playerChoice) {
         document.getElementById('playerScore').textContent = playerScore;
         document.getElementById('computerScore').textContent = computerScore;
 
-
-        //ends the game
+        // End the game
         if (roundNumber === 5) {
             // Display game over message
             document.getElementById('resultMessage').textContent = 'Game Over! Click Restart to play again!!';
             // Congratulatory message
             if (playerScore > computerScore) {
-                document.getElementById('resultMessage').innerHTML = 'Congratulations! You win!';
+                document.getElementById('resultMessage').innerHTML = getRandomMessage(winMessages) + ' Click to play again!';
             } else if (playerScore < computerScore) {
-                document.getElementById('resultMessage').innerHTML = 'Computer wins. Click to play again';
+                document.getElementById('resultMessage').innerHTML = getRandomMessage(loseMessages) + ' Click to play again';
             } else {
-                document.getElementById('resultMessage').innerHTML = 'It\'s a tie. Good game!';
+                document.getElementById('resultMessage').innerHTML = getRandomMessage(tieMessages);
             }
         }
     }
-
 }
 
 // Function to restart the game
 function restart() {
     window.location.reload();
-     playerScore = 0;
+    playerScore = 0;
     computerScore = 0;
     roundNumber = 0;
-
-    // Reset HTML elements
-    document.getElementById('playerScore').textContent = playerScore;
-    document.getElementById('computerScore').textContent = computerScore;
-    document.getElementById('resultMessage').textContent = '';
-    document.getElementById('roundResults').innerHTML = '';
 }

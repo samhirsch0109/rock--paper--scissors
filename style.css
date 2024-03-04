@@ -73,13 +73,6 @@ h2.text-center {
     border: none;
     border-radius: 5px;
   } 
-    #restart {
-        display: none;
-        margin-top: 10px;
-        padding: 5px 10px;
-    }
-
-
 
 button:hover {
     background-color: #7970bd;
@@ -94,11 +87,12 @@ h3.text-center {
     font-family: "Playfair Display", serif;
     font-size: x-large;
     color: rgb(112, 142, 233);
+    font-weight: bold;
 }
 
 #resultMessage {
-    font-weight: 600;
+    font-family: "Playfair Display", serif;
     font-size: x-large;
-    font-family: "Madimi One", sans-serif;
-    color: rgb(132, 132, 177);
+    color: rgb(112, 142, 233);
+    font-weight: bold;
 }
