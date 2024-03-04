@@ -4,10 +4,10 @@ let story = ` Player Name: <b> ${name} </b>`
 
 nameChange.innerHTML = `<p>${story}</p>`
 
+
 let playerScore = 0;
 let computerScore = 0;
 let roundNumber = 0;
-let roundResults = [];
 
 // Result messages for different outcomes
 const winMessages = [
@@ -17,12 +17,12 @@ const winMessages = [
 
 const loseMessages = [
     'Computer wins the game.',
-    'Better luck next time!',
+    'Better luck next time! The computer won.',
 ];
 
 const tieMessages = [
     'It\'s a tie. Good game!',
-    'No winner this round.',
+    'No winner this round. It\'s a tie.',
 ];
 
 // randomly selects a message from an array
